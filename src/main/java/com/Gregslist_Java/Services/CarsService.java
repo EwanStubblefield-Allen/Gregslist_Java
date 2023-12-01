@@ -26,7 +26,7 @@ public class CarsService {
   public Car getCarById(String carId) {
     return carsRepository.findById(carId)
         .orElseThrow(
-            () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "[NO CHARACTER MATCHES THE ID: " + carId + "]"));
+            () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "[NO CAR MATCHES THE ID: " + carId + "]"));
   }
 
   public Car createCar(Car carData) {

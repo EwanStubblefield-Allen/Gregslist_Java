@@ -18,7 +18,7 @@ import com.Gregslist_Java.Services.CarsService;
 import jakarta.transaction.Transactional;
 
 @RestController
-@RequestMapping(path = "api/cars")
+@RequestMapping("api/cars")
 public class CarsController {
   @Autowired
   private final CarsService carsService;

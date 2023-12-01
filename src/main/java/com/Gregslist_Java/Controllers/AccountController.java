@@ -15,7 +15,7 @@ import com.Gregslist_Java.Services.AccountService;
 import jakarta.transaction.Transactional;
 
 @RestController
-@RequestMapping(path = "account")
+@RequestMapping("account")
 public class AccountController {
   private final AccountService accountService;
 
