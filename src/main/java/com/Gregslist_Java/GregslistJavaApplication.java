@@ -1,4 +1,4 @@
-package com.example.Gregslist_Java;
+package com.Gregslist_Java;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

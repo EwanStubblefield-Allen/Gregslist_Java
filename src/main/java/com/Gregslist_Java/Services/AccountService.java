@@ -1,8 +1,11 @@
-package com.example.Gregslist_Java.Account;
+package com.Gregslist_Java.Services;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+
+import com.Gregslist_Java.Models.Account;
+import com.Gregslist_Java.Repositories.AccountRepository;
 
 @Service
 public class AccountService {
@@ -12,7 +15,7 @@ public class AccountService {
     this.accountRepository = accountRepository;
   }
 
-  protected Account getOrCreateProfile(Account userInfo) {
+  public Account getOrCreateProfile(Account userInfo) {
     Optional<Account> profileOptional = accountRepository.findById(userInfo.getId());
     if (profileOptional.isEmpty()) {
       return accountRepository.save(userInfo);
@@ -20,11 +23,11 @@ public class AccountService {
     return profileOptional.get();
   }
 
-  protected Account getProfileByEmail(String userEmail) {
+  public Account getProfileByEmail(String userEmail) {
     return accountRepository.findByEmail(userEmail).get();
   }
 
-  protected Account update(Account userInfo) {
+  public Account update(Account userInfo) {
     System.out.println("hi" + userInfo.getEmail());
     Account original = getProfileByEmail(userInfo.getEmail());
     original.setName(userInfo.getName().length() > 0 ? userInfo.getName() : original.getName());

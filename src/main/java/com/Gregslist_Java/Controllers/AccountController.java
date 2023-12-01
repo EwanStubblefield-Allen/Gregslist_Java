@@ -1,4 +1,4 @@
-package com.example.Gregslist_Java.Account;
+package com.Gregslist_Java.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Gregslist_Java.Models.Account;
+import com.Gregslist_Java.Services.AccountService;
+
 import jakarta.transaction.Transactional;
 
 @RestController
-@RequestMapping(path = "api/account")
+@RequestMapping(path = "account")
 public class AccountController {
   private final AccountService accountService;
 
